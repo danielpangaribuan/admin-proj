@@ -35,8 +35,7 @@ const Movie = () => {
     useEffect(() => {
         dispatch(getListGenre());
         dispatch(getListMovie(page));
-        console.log(movieList)
-    }, [page, dispatch, movieList]);
+    }, [page]);
     
 
     const handleChange = ( event, value) => {

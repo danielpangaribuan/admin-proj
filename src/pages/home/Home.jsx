@@ -25,7 +25,7 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getListGenre());
-    }, [dispatch]);
+    }, []);
 
     const renderGenre = () => {
         if ( genreList ) {

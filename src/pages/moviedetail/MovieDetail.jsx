@@ -20,8 +20,7 @@ const MovieDetail = () => {
 
     useEffect( () => {
         dispatch(getDetailMovie(id));
-        console.log(data)
-    }, [id]);
+    }, []);
 
     const renderForm = () => {
         let form = [];
