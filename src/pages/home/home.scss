@@ -1,0 +1,130 @@
+.home {
+    display: flex;
+
+    .homeContainer {
+        // background: lightblue;
+        flex: 2;
+
+        .listGenre {
+            padding: 10px 20px;
+
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            .genre-group {
+                display: flex;
+                flex-wrap: wrap;
+
+                .genre-card {
+                    padding: 4px 8px;
+                    box-shadow: 0 0 4px rgba(0,0,0,.4);
+                    margin-bottom: 10px;
+                    margin-right: 10px;
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .listMovie {
+            padding: 10px 20px;
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            .movie-group {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+    
+            .movie-card {
+                max-width: 250px;
+                height: 420px;
+                position: relative;
+                margin-bottom: 20px;
+                margin-right: 20px;
+                overflow: hidden;
+                border-radius: 20px;
+                padding: 10px;
+                box-shadow: 0px 0px 4px rgba(0,0,0,.2);
+    
+                &-backdrop {
+                    border-radius: 20px;
+                    width: 100%;
+                    object-fit: contain;
+                    box-shadow: 0px 2px 10px rgba(0, 0, 0,.4);
+                }
+    
+                &-body {
+                    display: flex;
+                    flex-direction: column;
+    
+                    &-header {
+                        display: flex;
+                        position: relative;
+                        padding: 10px;
+                        margin-bottom: -80px;
+                    }
+    
+                    &-description {
+                        padding: 10px;
+                        font-size: 14px;
+                    }
+                }
+    
+                &-poster {
+                    position: relative;
+                    top: -100px;
+                    box-shadow: -4px 8px 12px -1px rgba(0,0,0,.3);
+                    height: 150px;
+    
+                    img {
+                        height: 100%;
+                        border-radius: 4px;
+                        object-fit: fill;
+                    }
+                }
+    
+                &-title {
+                    margin-left: 10px;
+                    font-size: 14px;
+
+                    a {
+                        cursor: pointer;
+                    }
+                }
+    
+                &-genre {
+                    display: flex;
+                    flex-wrap: wrap;
+    
+                    &-list {
+                        background: #bbb;
+                        padding: 4px 8px;
+                        font-size: 12px;
+                        border-radius: 20px;
+                        margin-bottom: 5px;
+                        margin-right: 10px;
+                    }
+                }
+                .movie-adults {
+                    position: absolute;
+                    top: 225px;
+                    left: 20px;
+                    background: red;
+                    padding: 4px;
+                    font-size: 12px;
+                    border-radius: 8px;
+                    color: #FFF;
+                }
+            }
+
+            .movie-pagination-wrapper {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+        }
+    }
+}
