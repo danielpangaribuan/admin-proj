@@ -34,7 +34,7 @@ const Home = () => {
                 return (
                     <StyledTableRow key={item.id} >
                         <StyledTableCell component="th" align='center' scope="row">
-                            {idx}
+                            {idx + 1}
                         </StyledTableCell>
                         <StyledTableCell align="left">{item.name}</StyledTableCell>
                     </StyledTableRow>
