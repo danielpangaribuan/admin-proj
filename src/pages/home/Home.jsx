@@ -6,11 +6,12 @@ import Sidebar from '../../components/sidebar/Sidebar';
 //  TABLE
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
 import "./home.css";
 import { getListGenre } from "../../redux/action/genre-action";
 
@@ -31,35 +32,53 @@ const Home = () => {
         if ( genreList ) {
             return genreList.map((item, idx) => {
                 return (
-                    <TableRow key={item.id} >
-                        <TableCell component="th" align='center' scope="row">
+                    <StyledTableRow key={item.id} >
+                        <StyledTableCell component="th" align='center' scope="row">
                             {idx}
-                        </TableCell>
-                        <TableCell align="left">{item.id}</TableCell>
-                        <TableCell align="left">{item.name}</TableCell>
-                    </TableRow>
+                        </StyledTableCell>
+                        <StyledTableCell align="left">{item.name}</StyledTableCell>
+                    </StyledTableRow>
                 )
             })
         }
     }
 
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+          fontSize: 14,
+        },
+    }));
+      
+    const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(odd)': {
+          backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        '&:last-child td, &:last-child th': {
+          border: 0,
+        },
+    }));
 
     return (
         <div className='home'>
             <Sidebar />
             <div className="homeContainer">
                 <Navbar />
-                <div className="top"></div>
-                <div className="listGenre">
-                    <h2>Genre</h2>
+                <div className="content">
                     <div className="genre-wrapper">
                         <TableContainer component={Paper} sx={{ width: 400 }}>
+                            <div className="movie-pagination-wrapper" style={{ padding: '0 10px', margin: '10px 0', display: 'flex', justifyContent: 'space-between' }}>
+                                <h2 style={{ margin: 0 }}>Genre</h2>
+                            </div>
                             <Table sx={{ width: 400 }} aria-label="simple table">
                                 <TableHead>
                                 <TableRow>
-                                    <TableCell align='center'>No</TableCell>
-                                    <TableCell align='left'>ID</TableCell>
-                                    <TableCell align="left">Category Name</TableCell>
+                                    <StyledTableCell align='center'>No</StyledTableCell>
+                                    <StyledTableCell align="left">Category Name</StyledTableCell>
                                 </TableRow>
                                 </TableHead>
                                 <TableBody>

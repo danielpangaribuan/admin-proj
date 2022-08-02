@@ -7,14 +7,14 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
+import ReorderIcon from '@mui/icons-material/Reorder';
 
 const Navbar = () => {
     return (
         <div className="navbar">
             <div className="wrapper">
-                <div className="search">
-                    <input type="text" placeholder='Search...' />
-                    <SearchOutlinedIcon />
+                <div className="navbar-toggle">
+                    <ReorderIcon />
                 </div>
 
                 <div className="items">
